@@ -1,25 +1,26 @@
-class Garden {
+class Shape {
 
-    static final double PI = 3.14;
+       static final double PI = 3.14;
 
-    void calculateFlowerBedArea(float radius) {
-        double area = PI * radius * radius;
-        System.out.println("Area of the flower bed (circle) is: " + area);
+       void Area(float r) {
+        double A = PI * r * r;
+        System.out.println("Area of the circle is: " + A);
     }
 
-    void calculateGardenPlotArea(float length, float width) {
-        double area = length * width;
-        System.out.println("Area of the garden plot (rectangle) is: " + area);
+      void Area(float l, float w) {
+        double A = l * w;
+        System.out.println("Area of the rectangle is: " + A);
     }
 }
 
-class GardenPlanner {
+class Bhagavat {
 
     public static void main(String[] args) {
-        Garden garden = new Garden();
+             Shape s1 = new Shape();
 
-        garden.calculateFlowerBedArea(4);
+             s1.Area(4);
 
-        garden.calculateGardenPlotArea(2, 5);
-    }
+
+        s1.Area(2, 5);
+    }
 }
