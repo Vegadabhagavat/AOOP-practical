@@ -1,55 +1,62 @@
-public class InsufficientFuelException extends Exception {
-    public InsufficientFuelException(String message) {
+public class NotSufficientFundException extends Exception {
+    public NotSufficientFundException(String message) {
         super(message);  
     }
 }
 
 import java.util.Scanner;
 
-public class CarFuelSystem {
-    private double fuelLevel;
+public class BankingApplication {
+    private double balance;
 
-    public CarFuelSystem(double initialFuel) {
-        this.fuelLevel = initialFuel;
+    
+    public BankingApplication(double initialBalance) {
+        this.balance = initialBalance;
     }
 
-    public void addFuel(double amount) {
-        fuelLevel += amount;
-        System.out.println("Added Fuel: " + amount + " liters");
-        System.out.println("Current Fuel Level: " + fuelLevel + " liters");
+   
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: Rs. " + amount);
+        System.out.println("Current Balance: Rs. " + balance);
     }
 
-    public void drive(double fuelRequired) throws InsufficientFuelException {
-        if (fuelRequired > fuelLevel) {
-            throw new InsufficientFuelException("Error: Insufficient Fuel!");
+    
+    public void withdraw(double amount) throws NotSufficientFundException {
+        if (amount > balance) {
+            throw new NotSufficientFundException("Error: Not Sufficient Fund!");
         }
-        fuelLevel -= fuelRequired;
-        System.out.println("Drove using: " + fuelRequired + " liters");
-        System.out.println("Current Fuel Level: " + fuelLevel + " liters");
+        balance -= amount;
+        System.out.println("Withdrew: Rs. " + amount);
+        System.out.println("Current Balance: Rs. " + balance);
     }
 
     public static void main(String[] args) {
       
-        CarFuelSystem car = new CarFuelSystem(50);
+        BankingApplication account = new BankingApplication(25000);
         
-        car.addFuel(50);
+       
+        account.deposit(25000);
 
+      
         try {
-            car.drive(40);
-        } catch (InsufficientFuelException e) {
+            account.withdraw(20000);
+        } catch (NotSufficientFundException e) {
             System.out.println(e.getMessage());
         }
 
+       
         try {
-            car.drive(30);
-        } catch (InsufficientFuelException e) {
+            account.withdraw(4000);
+        } catch (NotSufficientFundException e) {
             System.out.println(e.getMessage());
         }
 
+       
         try {
-            car.drive(50);
-        } catch (InsufficientFuelException e) {
+            account.withdraw(2000);
+        } catch (NotSufficientFundException e) {
             System.out.println(e.getMessage());
-        }
-    }
+        }
+    }
 }
