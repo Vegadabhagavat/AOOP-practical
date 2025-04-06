@@ -1,21 +1,23 @@
 import java.util.HashMap;
 
-public class WarehouseInventory {
+public class HashMapDemo {
     public static void main(String[] args) {
         
-        HashMap<Integer, String> inventory = new HashMap<>();
+        HashMap<Integer, String> students = new HashMap<>();
 
-        inventory.put(101, "Laptop");
-        inventory.put(102, "Smartphone");
-        inventory.put(103, "Headphones");
-        inventory.put(104, "Smartwatch");
-        inventory.put(105, "Tablet");
+        
+        students.put(101, "Luic");
+        students.put(102, "Barbie");
+        students.put(103, "John");
+        students.put(104, "Adam");
+        students.put(105, "Mukesh");
 
-        int productId = 103;
-        if (inventory.containsKey(productId)) {
-            System.out.println("Product with Product ID " + productId + " is: " + inventory.get(productId));
+      
+        int enrollmentNo = 103;
+        if (students.containsKey(enrollmentNo)) {
+            System.out.println("Student with enrollment number " + enrollmentNo + " is: " + students.get(enrollmentNo));
         } else {
-            System.out.println("Product not found with Product ID " + productId);
-        }
-    }
+            System.out.println("Student not found with enrollment number " + enrollmentNo);
+        }
+    }
 }
