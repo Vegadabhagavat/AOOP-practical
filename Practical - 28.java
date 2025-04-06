@@ -2,40 +2,40 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class LibraryDemo {
+public class ListDemo {
     public static void main(String[] args) {
        
-        List<String> booksOnShelf = new ArrayList<>();
-        booksOnShelf.add("The Great Gatsby");
-        booksOnShelf.add("To Kill a Mockingbird");
-        booksOnShelf.add("1984");
-        booksOnShelf.add("Moby Dick");
-        booksOnShelf.add("Pride and Prejudice");
-        booksOnShelf.add("War and Peace");
-        booksOnShelf.add("The Catcher in the Rye");
+        List<String> weekdays = new ArrayList<>();
+        weekdays.add("Monday");
+        weekdays.add("Tuesday");
+        weekdays.add("Wednesday");
+        weekdays.add("Thursday");
+        weekdays.add("Friday");
+        weekdays.add("Saturday");
+        weekdays.add("Sunday");
 
-        System.out.println("Books on the Shelf (ArrayList):");
-        for (String book : booksOnShelf) {
-            System.out.println(book);
+        System.out.println("Weekdays (ArrayList):");
+        for (String day : weekdays) {
+            System.out.println(day);
         }
 
-        List<String> booksInReadingList = new LinkedList<>();
-        booksInReadingList.add("The Hobbit");
-        booksInReadingList.add("Catch-22");
-        booksInReadingList.add("Brave New World");
-        booksInReadingList.add("The Odyssey");
-        booksInReadingList.add("The Brothers Karamazov");
-        booksInReadingList.add("Crime and Punishment");
-        booksInReadingList.add("Ulysses");
-        booksInReadingList.add("The Divine Comedy");
-        booksInReadingList.add("Don Quixote");
-        booksInReadingList.add("One Hundred Years of Solitude");
-        booksInReadingList.add("The Bible");
-        booksInReadingList.add("The Quran");
+        List<String> months = new LinkedList<>();
+        months.add("January");
+        months.add("February");
+        months.add("March");
+        months.add("April");
+        months.add("May");
+        months.add("June");
+        months.add("July");
+        months.add("August");
+        months.add("September");
+        months.add("October");
+        months.add("November");
+        months.add("December");
 
-        System.out.println("\nBooks in the Reading List (LinkedList):");
-        for (String book : booksInReadingList) {
-            System.out.println(book);
-        }
-    }
+        System.out.println("\nMonths (LinkedList):");
+        for (String month : months) {
+            System.out.println(month);
+        }
+    }
 }
