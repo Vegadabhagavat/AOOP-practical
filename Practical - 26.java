@@ -1,8 +1,8 @@
-class EvenRouteBus extends Thread {
+class EvenNumbersThread extends Thread {
   
     public void run() {
         for (int i = 2; i <= 200; i += 2) {
-            System.out.println("Bus on even route: " + i);
+            System.out.println(i);
             try {
                 Thread.sleep(100);  
             } catch (InterruptedException e) {
@@ -13,11 +13,11 @@ class EvenRouteBus extends Thread {
 }
 
 
-class OddRouteBus extends Thread {
+class OddNumbersThread extends Thread {
 
     public void run() {
         for (int i = 1; i <= 200; i += 2) {
-            System.out.println("Bus on odd route: " + i);
+            System.out.println(i);
             try {
                 Thread.sleep(100);  
             } catch (InterruptedException e) {
@@ -27,13 +27,14 @@ class OddRouteBus extends Thread {
     }
 }
 
-public class BusStation {
+public class Main {
     public static void main(String[] args) {
         
-        EvenRouteBus evenBus = new EvenRouteBus();
-        OddRouteBus oddBus = new OddRouteBus();
+        EvenNumbersThread evenThread = new EvenNumbersThread();
+        OddNumbersThread oddThread = new OddNumbersThread();
 
-        evenBus.start();
-        oddBus.start();
-    }
+       
+        evenThread.start();
+        oddThread.start();
+    }
 }
