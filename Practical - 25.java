@@ -1,9 +1,9 @@
-class Engine1 extends Thread {
+class Thread1 extends Thread {
     
     public void run() {
         try {
             while (true) {
-                System.out.println("Engine1 running");
+                System.out.println("Thread1");
                 Thread.sleep(1000); 
             }
         } catch (InterruptedException e) {
@@ -13,12 +13,12 @@ class Engine1 extends Thread {
 }
 
 
-class Engine2 extends Thread {
+class Thread2 extends Thread {
 
     public void run() {
         try {
             while (true) {
-                System.out.println("Engine2 running");
+                System.out.println("Thread2");
                 Thread.sleep(2000); 
             }
         } catch (InterruptedException e) {
@@ -27,13 +27,51 @@ class Engine2 extends Thread {
     }
 }
 
-public class Car {
+public class Main {
     public static void main(String[] args) {
         
-        Engine1 carEngine1 = new Engine1();
-        Engine2 carEngine2 = new Engine2();
+        Thread1 t1 = new Thread1();
+        Thread2 t2 = new Thread2();
 
-        carEngine1.start();
-        carEngine2.start();
+        t1.start();
+        t2.start();
     }
+}class Thread1 extends Thread {
+    
+    public void run() {
+        try {
+            while (true) {
+                System.out.println("Thread1");
+                Thread.sleep(1000); 
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+
+class Thread2 extends Thread {
+
+    public void run() {
+        try {
+            while (true) {
+                System.out.println("Thread2");
+                Thread.sleep(2000); 
+            }
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        Thread1 t1 = new Thread1();
+        Thread2 t2 = new Thread2();
+
+        t1.start();
+        t2.start();
+    }
 }
