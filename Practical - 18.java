@@ -1,30 +1,32 @@
-class Dog {
-    String breed;
+class Car {
+    String name;
     int topSpeed;
 
-    Dog(String breed, int topSpeed) {
-        this.breed = breed;
+   
+    Car(String name, int topSpeed) {
+        this.name = name;
         this.topSpeed = topSpeed;
     }
 
     public String toString() {
-        return "Dog Breed: " + breed + ", Top Speed: " + topSpeed + " km/h";
+        return "Car Name: " + name + ", Top Speed: " + topSpeed + " km/h";
     }
 }
 
-public class DogShow {
+public class Main {
     public static void main(String[] args) {
        
-        Dog dog1 = new Dog("Greyhound", 75);
-        Dog dog2 = new Dog("Beagle", 40);
-        Dog dog3 = new Dog("Bulldog", 20);
-        Dog dog4 = new Dog("Border Collie", 50);
-        Dog dog5 = new Dog("Pug", 15);
+        Car car1 = new Car("RR",100);
+        Car car2 = new Car("audi", 200);
+        Car car3 = new Car("zen", 100);
+        Car car4 = new Car("BMWm5", 300);
+        Car car5 = new Car("Lambo", 80);
 
-        System.out.println(dog1);
-        System.out.println(dog2);
-        System.out.println(dog3);
-        System.out.println(dog4);
-        System.out.println(dog5);
-    }
+        
+        System.out.println(car1);
+        System.out.println(car2);
+        System.out.println(car3);
+        System.out.println(car4);
+        System.out.println(car5);
+    }
 }
