@@ -1,30 +1,38 @@
-import java.util.Scanner;
-
-public class NoPagesException extends Exception {
-    public NoPagesException(String message) {
-        super(message);
+public class DivideByZeroException extends Exception {
+    public DivideByZeroException(String message) {
+        super(message); 
     }
 }
 
-public class Library {
+
+import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int bookPages = scanner.nextInt();
-        int borrowedBooks = scanner.nextInt();
+      
+        System.out.print("Enter numerator: ");
+        int numerator = scanner.nextInt();
+
+        System.out.print("Enter denominator: ");
+        int denominator = scanner.nextInt();
 
         try {
-            if (bookPages == 0) {
-                throw new NoPagesException("Error: The book has no pages!");
+          
+            if (denominator == 0) {
+                throw new DivideByZeroException("Error: Cannot divide by zero!");
             }
 
-            int pagesPerBook = bookPages / borrowedBooks;
-            System.out.println("You need to read " + pagesPerBook + " pages from each book.");
+          
+            int result = numerator / denominator;
+            System.out.println("Result: " + result);
 
-        } catch (NoPagesException e) {
+        } catch (DivideByZeroException e) {
+            
             System.out.println(e.getMessage());
         } finally {
             scanner.close();
-        }
-    }
+        }
+    }
 }
