@@ -1,19 +1,21 @@
 import java.util.HashSet;
 
-public class FruitBasket {
+public class HashSetDemo {
     public static void main(String[] args) {
        
-        HashSet<String> fruitsInBasket = new HashSet<>();
+        HashSet<String> colors = new HashSet<>();
 
-        fruitsInBasket.add("Apple");
-        fruitsInBasket.add("Banana");
-        fruitsInBasket.add("Orange");
-        fruitsInBasket.add("Grapes");
-        fruitsInBasket.add("Pineapple");
+        // Add color names to the HashSet
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+        colors.add("Yellow");
+        colors.add("Purple");
 
-        System.out.println("Fruits in the Basket:");
-        for (String fruit : fruitsInBasket) {
-            System.out.println(fruit);
-        }
-    }
+       
+        System.out.println("Colors in the HashSet:");
+        for (String color : colors) {
+            System.out.println(color);
+        }
+    }
 }
