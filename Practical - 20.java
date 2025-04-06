@@ -1,52 +1,64 @@
-abstract class DogBehavior {
-    abstract void performAction();
+abstract class Shape {
+ 
+    abstract double area();
 }
 
-class Barking extends DogBehavior {
-    String breed;
+class Triangle extends Shape {
+    double base, height;
 
-    Barking(String breed) {
-        this.breed = breed;
+ 
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
     }
 
-    void performAction() {
-        System.out.println(breed + " is barking!");
-    }
-}
-
-class Fetching extends DogBehavior {
-    String breed;
-
-    Fetching(String breed) {
-        this.breed = breed;
-    }
-
-    void performAction() {
-        System.out.println(breed + " is fetching the ball!");
+    double area() {
+        return 0.5 * base * height;
     }
 }
 
-class Playing extends DogBehavior {
-    String breed;
 
-    Playing(String breed) {
-        this.breed = breed;
+class Rectangle extends Shape {
+    double length, width;
+
+    
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
     }
 
-    void performAction() {
-        System.out.println(breed + " is playing with the toy!");
+
+
+    double area() {
+        return length * width;
     }
 }
 
-public class DogShow {
+class Circle extends Shape {
+    double radius;
+
+   
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+   
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+
+public class Main {
     public static void main(String[] args) {
+      
+        Shape triangle = new Triangle(10, 20);
+        Shape rectangle = new Rectangle(6, 8);
+        Shape circle = new Circle(7);
 
-        DogBehavior goldenRetriever = new Barking("Golden Retriever");
-        DogBehavior beagle = new Fetching("Beagle");
-        DogBehavior bulldog = new Playing("Bulldog");
-
-        goldenRetriever.performAction();
-        beagle.performAction();
-        bulldog.performAction();
-    }
+       
+        System.out.println("Area of Triangle: " + triangle.area());
+        System.out.println("Area of Rectangle: " + rectangle.area());
+        System.out.println("Area of Circle: " + circle.area());
+    }
 }
